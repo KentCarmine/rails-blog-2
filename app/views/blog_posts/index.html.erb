@@ -1,0 +1,7 @@
+<% @all_posts.each do |post| %>
+  <h2><a href="/blog_posts/<%=post.id%>"><%= post.title %></a></h2><br>
+  <p><%= post.body %></p>
+  <br>
+<% end %>
+<br>
+<a href="/">Home</a>
