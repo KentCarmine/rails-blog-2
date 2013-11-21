@@ -2,8 +2,17 @@ RailsBlogApp2::Application.routes.draw do
 
   # resources :blog_posts
 
-  match "/blog_posts" => "blog_posts#index", :via => :get
-  match "/blog_posts/:id" => "blog_posts#show", :via => :get
+  match "/blog_posts" => "blog_posts#index", :as => :blog_posts, :via => :get
+
+  match "/blog_posts/new" => "blog_posts#new", :as => :blog_posts, :via => :get
+  match "/blog_posts" => "blog_posts#create", :as => :blog_posts, :via => :post
+
+  match "/blog_posts/:id/edit" => "blog_posts#edit", :as => :blog_posts, :via => :get
+  match "/blog_posts/:id" => "blog_posts#update", :as => :blog_posts, :via => [:put, :patch]
+
+  match "/blog_posts/:id" => "blog_posts#show", :as => :blog_posts, :via => :get
+
+  match "/blog_posts/:id" => "blog_posts#destroy", :as => :blog_posts, :via => :delete
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
