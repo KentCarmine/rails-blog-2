@@ -1,6 +1,9 @@
 RailsBlogApp2::Application.routes.draw do
 
-  resources :blog_posts
+  # resources :blog_posts
+
+  match "/blog_posts" => "blog_posts#index", :via => :get
+  match "/blog_posts/:id" => "blog_posts#show", :via => :get
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
